@@ -1,0 +1,406 @@
+@media (max-width: 767.98px) {
+
+    /* Efeito ao tocar (active) nos links do footer */
+    #section-contato a:active,
+    #section-contato a:focus {
+        color: #f1c40f !important;
+        /* amarelo */
+    }
+
+    /* WhatsApp fica verde no active/focus */
+    #section-contato a[href*="wa.me"]:active,
+    #section-contato a[href*="wa.me"]:focus {
+        color: #28a745 !important;
+        /* verde success */
+    }
+}
+
+
+@media (min-width: 768px) {
+
+    /* Reset geral para links e ícones */
+    #section-contato a,
+    #section-contato a i {
+        color: #ecf0f1;
+        transition: color 0.3s ease;
+    }
+
+    /* Hover geral: dourado */
+    #section-contato a:hover,
+    #section-contato a:hover i {
+        color: #f1c40f !important;
+    }
+
+    /* ÍCONE do WhatsApp SEMPRE verde */
+    #section-contato a[href*="wa.me"] i {
+        color: #28a745 !important;
+    }
+
+    /* TEXTO do WhatsApp branco normalmente */
+    #section-contato a[href*="wa.me"] {
+        color: #ecf0f1 !important;
+    }
+
+    /* TEXTO do WhatsApp fica verde no hover */
+    #section-contato a[href*="wa.me"]:hover {
+        color: #28a745 !important;
+    }
+
+    /* Garante que o ícone do WhatsApp não mude no hover */
+    #section-contato a[href*="wa.me"]:hover i {
+        color: #28a745 !important;
+    }
+}
+
+
+
+.selo-hover {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.selo-hover:hover {
+    transform: scale(1.05);
+    /* aumenta levemente */
+    filter: brightness(1.1) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+    /* realce */
+}
+
+
+@media (max-width: 767.98px) {
+    .texto-garantia {
+        margin-top: -6vh;
+        /* Ajuste o valor para subir mais ou menos */
+    }
+}
+
+@media (max-width: 767.98px) {
+    .img-selo {
+        margin-top: -3vh;
+        /* Ajuste esse valor para subir mais ou menos */
+    }
+}
+
+
+@media (max-width: 767.98px) {
+    .h2-porque {
+        margin-top: -2vh;
+    }
+}
+
+
+@media (max-width: 767.98px) {
+    #section-porque .card-1 {
+        transform: translateY(-1vh);
+    }
+}
+
+
+
+@media (max-width: 767.98px) {
+    #section-porque .custom-card {
+        max-width: 90% !important;
+        margin: 0 auto !important;
+        /* Centraliza horizontalmente */
+    }
+
+    #section-porque .custom-card ul {
+        font-size: 1rem !important;
+    }
+}
+
+
+@media (max-width: 767.98px) {
+    #section-home .container {
+        margin-top: -5vh;
+        /* ou 1rem, ajuste como quiser */
+    }
+}
+
+#section-home {
+    position: relative;
+    z-index: 1;
+}
+
+
+#section-garantia {
+    scroll-margin-top: 7vh;
+}
+
+#section-garantia {
+    background-color: #ecf0f1;
+    /* cinza claro da paleta */
+}
+
+#section-garantia img {
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.1));
+}
+
+#section-garantia h2 {
+    color: #34495e;
+}
+
+#section-garantia p {
+    color: #555;
+}
+
+@keyframes float-whatsapp {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    animation: float-whatsapp 3s ease-in-out infinite;
+    text-decoration: none;
+}
+
+@media (max-width: 767.98px) {
+  .whatsapp-float {
+    right: -2vh; /* ajuste aqui */
+  }
+}
+
+
+.whatsapp-inner {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 50px;
+    padding: 10px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.whatsapp-icon {
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-text {
+    color: white;
+    font-weight: 500;
+    margin-left: 12px;
+    font-size: 1rem;
+    opacity: 0;
+    max-width: 0;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+/* Hover effect */
+.whatsapp-float:hover .whatsapp-inner {
+    background-color: #25D366;
+    padding-right: 20px;
+    padding-left: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-float:hover .whatsapp-text {
+    opacity: 1;
+    max-width: 200px;
+}
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+}
+
+.navbar-custom {
+    background-color: #34495e;
+    /* Azul escuro */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    /* sombra mais intensa */
+    padding: 0.8rem 1.5rem;
+}
+
+.navbar-brand img {
+    height: 50px;
+    filter: drop-shadow(0 0 3px rgba(241, 196, 15, 0.6));
+    /* destaque amarelo sutil */
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.05);
+}
+
+.navbar-nav {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    color: #ffffff;
+    font-weight: 500;
+    margin: 0 0.75rem;
+    padding: 0.5rem 0;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #f1c40f;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover:not(.active) {
+    color: #f1c40f;
+}
+
+.navbar-nav .nav-link:hover:not(.active)::after {
+    width: 100%;
+}
+
+.navbar-nav .nav-link.active {
+    color: #f1c40f;
+}
+
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: #34495e;
+        padding: 1rem;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .navbar-nav {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+#section-porque {
+    scroll-margin-top: 7vh;
+}
+
+
+/* Estilo do card */
+.custom-card {
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+}
+
+/* Hover do card */
+.custom-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* Cor padrão do texto e ícones */
+.custom-icon,
+.custom-list-item {
+    color: #34495e;
+    transition: color 0.3s ease;
+}
+
+/* Quando o card está em hover, troca para dourado */
+.custom-card:hover .custom-icon,
+.custom-card:hover .custom-list-item {
+    color: #f1c40f;
+}
+
+/* Garante que imagem ocupe toda a altura e fique recortada corretamente */
+.object-fit-cover {
+    object-fit: cover;
+    height: 100%;
+}
+
+.btn-whatsapp-custom {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #25D366;
+    /* Verde WhatsApp */
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 15px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-whatsapp-custom:hover {
+    background-color: white;
+    color: #25D366;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.btn-whatsapp-custom:hover .icon-whatsapp {
+    filter: brightness(0) saturate(100%) invert(55%) sepia(95%) saturate(403%) hue-rotate(88deg) brightness(92%) contrast(95%);
+}
+
+.icon-whatsapp {
+    font-size: 1.5rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.card-custom {
+    border: 1px solid #dce1e5;
+    /* Borda sutil */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+
+.card-custom:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+
+
+

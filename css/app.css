@@ -3,7 +3,7 @@
     /* Efeito ao tocar (active) nos links do footer */
     #section-contato a:active,
     #section-contato a:focus {
-        color: #f1c40f !important;
+        color: #ffffff !important;
         /* amarelo */
     }
 
@@ -21,14 +21,14 @@
     /* Reset geral para links e ícones */
     #section-contato a,
     #section-contato a i {
-        color: #ecf0f1;
+        color: #2C2C2C;
         transition: color 0.3s ease;
     }
 
     /* Hover geral: dourado */
     #section-contato a:hover,
     #section-contato a:hover i {
-        color: #f1c40f !important;
+        color: white !important;
     }
 
     /* ÍCONE do WhatsApp SEMPRE verde */
@@ -38,7 +38,7 @@
 
     /* TEXTO do WhatsApp branco normalmente */
     #section-contato a[href*="wa.me"] {
-        color: #ecf0f1 !important;
+        color: #2C2C2C !important;
     }
 
     /* TEXTO do WhatsApp fica verde no hover */
@@ -209,6 +209,8 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+
+
 .whatsapp-float:hover .whatsapp-text {
     opacity: 1;
     max-width: 200px;
@@ -237,19 +239,56 @@ h6 {
 }
 
 .navbar-custom {
-    background-color: #34495e;
-    /* Azul escuro */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    /* sombra mais intensa */
-    padding: 0.8rem 1.5rem;
+  position: fixed;
+  padding: 0.8rem 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to right,
+    #1a1a1a 0px,      /* começa com preto escuro */
+    #1a1a1a 120px,    /* faixa escura termina em 180px */
+    #1a1a1a 150px,    /* início do gradiente */
+    #FFB300 165px,    /* gradiente vai até 220px */
+    #FFB300 100%      /* o restante da navbar é amarelo */
+  );
 }
 
-.navbar-brand img {
-    height: 50px;
-    filter: drop-shadow(0 0 3px rgba(241, 196, 15, 0.6));
-    /* destaque amarelo sutil */
-    transition: transform 0.3s ease;
+
+/* Área da logo dentro da faixa escura */
+.logo-area {
+  width: 80px;
+  height: 80px;
+  background-color: transparent;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  z-index: 2;
 }
+
+/* Imagem da logo */
+.logo-img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Estilo dos links do menu */
+.navbar-nav .nav-link {
+  font-weight: 500;
+  color: #333;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Hover nos links */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #000;
+  font-weight: bold;
+}
+
+
+
+
+
 
 .navbar-brand:hover img {
     transform: scale(1.05);
@@ -262,7 +301,7 @@ h6 {
 
 .navbar-nav .nav-link {
     position: relative;
-    color: #ffffff;
+    color: 	#2C2C2C;
     font-weight: 500;
     margin: 0 0.75rem;
     padding: 0.5rem 0;
@@ -277,13 +316,13 @@ h6 {
     bottom: 0;
     width: 0%;
     height: 2px;
-    background-color: #f1c40f;
+    background-color: white;
     transition: all 0.3s ease;
     transform: translateX(-50%);
 }
 
 .navbar-nav .nav-link:hover:not(.active) {
-    color: #f1c40f;
+    color: white;
 }
 
 .navbar-nav .nav-link:hover:not(.active)::after {
@@ -291,7 +330,7 @@ h6 {
 }
 
 .navbar-nav .nav-link.active {
-    color: #f1c40f;
+    color: white;
 }
 
 .navbar-nav .nav-link.active::after {
@@ -308,8 +347,9 @@ h6 {
 
 @media (max-width: 991px) {
     .navbar-collapse {
-        background-color: #34495e;
+        background-color: #FFB300;
         padding: 1rem;
+        margin-top: 2vh;
         border-radius: 0 0 8px 8px;
     }
 
@@ -340,7 +380,7 @@ h6 {
 /* Cor padrão do texto e ícones */
 .custom-icon,
 .custom-list-item {
-    color: #34495e;
+    color: 	#2C2C2C;
     transition: color 0.3s ease;
 }
 
@@ -399,6 +439,63 @@ h6 {
     transform: translateY(-6px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
+
+/* Botão estilo retroescavadeira */
+.retro-toggler {
+  width: 40px;
+  height: 30px;
+  position: relative;
+  border: none;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  z-index: 999;
+  transition: transform 0.2s ease-in-out;
+}
+
+.retro-bar {
+  height: 4px;
+  background-color: #1a1a1a; /* quase preto */
+  border-radius: 2px;
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.3s;
+}
+
+/* Posicionamento inicial das barras */
+.top-bar, .middle-bar, .bottom-bar {
+  width: 100%;
+  transform-origin: left center; /* para dar o efeito de dobradiça */
+}
+
+/* ANIMAÇÃO tipo "braço de retro" quando menu está ABERTO */
+.retro-toggler:not(.collapsed) .top-bar {
+  transform: rotate(45deg) translateY(10px);
+  width: 80%;
+}
+
+.retro-toggler:not(.collapsed) .middle-bar {
+  opacity: 0;
+}
+
+.retro-toggler:not(.collapsed) .bottom-bar {
+  transform: rotate(-45deg) translateY(-10px);
+  width: 80%;
+}
+
+.cep-link {
+  text-decoration: none;
+  color: inherit; /* cor normal */
+  transition: color 0.3s ease;
+}
+
+.cep-link:active {
+  color: white;
+}
+
+
+
+
 
 
 

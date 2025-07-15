@@ -78,6 +78,18 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+  document.addEventListener("DOMContentLoaded", function () {
+    const whatsappBtn = document.querySelector('.whatsapp-float');
+
+    whatsappBtn.addEventListener('click', function () {
+      // Remove a classe de hover "manualmente" ao clicar
+      const inner = this.querySelector('.whatsapp-inner');
+
+      // Clona o elemento e substitui para forçar a parada do :hover
+      const newInner = inner.cloneNode(true);
+      inner.replaceWith(newInner);
+    });
+  });
 
 
 
